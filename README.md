@@ -1,4 +1,4 @@
-# TopicTree
+# TopicTree (thread-safe)
 According MQTT topic standard design topic tree.
 topic format is the MQTT topic standard. Support common and wildcard search.
 
