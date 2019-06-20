@@ -15,6 +15,7 @@ topic format is the MQTT topic standard. Support common and wildcard search.
  ```
  
  ## search topic
+ if your topic is not carrying wildcards it will find the current topic and wildcard topic.if topic carries wildcards only find common topic. 
  ```
  //not wildcard search
  List<String> commSearch = topicTree.search("fate/stay/night");
