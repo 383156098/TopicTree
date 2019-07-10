@@ -319,8 +319,8 @@ public class TopicTree<V>{
                 }
             }else{
                 Node<V> node = concurrentHashMap.get(key);
-                if(checkSize(c,levelTopic)){
-                    wildCardSearch(levelTopic,rootNode,c+1,container);
+                if(node!=null && checkSize(c,levelTopic)){
+                    wildCardSearch(levelTopic,node,c+1,container);
                 }else{
                     updateContainer(container,node);
                 }
@@ -344,6 +344,7 @@ public class TopicTree<V>{
      * 用 "fate/stay/+/+/feel" 主题到主题树中遍历查找，查找结果 node0,node4,node5
      * 具体的主题匹配规则请查看MQTT 主题标准
      */
+    @Deprecated
     private void willCardSearchTree(List<String> levelElement, Node<V> rootNode, int c, CopyOnWriteArrayList<V> container) {
         String key = levelElement.get(c);
         ConcurrentHashMap<String, Node<V>> concurrentHashMap = rootNode.getNodes();
